@@ -1,6 +1,7 @@
 pyzmq-wrapper
 =============
 
+<<<<<<< HEAD
 A set of wrapper classes over pyzmq that provide a simper interface and additional functionality.
 
 The following entities are provided to abstract the user from the zmq code.
@@ -54,3 +55,6 @@ Similar to a subscriber but this takes a map of topics to callbacks.
     #and start it so that we can process the messages
     s.start()
 
+=======
+A set of wrapper classes over pyzmq that provide a simper interface and additional functionality
+>>>>>>> df7cb468c9244c1c82062526bcddbda823645348
