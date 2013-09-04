@@ -34,7 +34,7 @@ for every message that is received on the topic.
         
     
     #create the subscriber
-    s=subscriber('tcp://127.0.0.1:5555',['greetings'],process_greeting,message_type)
+    s=subscriber('tcp://127.0.0.1:5555',['greetings'],process_greeting,MULTIPART)
     #and start it so that we can process the messages
     s.start()
     
