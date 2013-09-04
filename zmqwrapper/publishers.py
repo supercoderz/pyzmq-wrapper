@@ -1,49 +1,47 @@
 import zmq
+from sockets import ServerConnection
+from constants import *
 
-def json_publisher(port):
+def publisher(address):
     """
-    Creates a JSON publisher binding to the given port number.
+    Creates a publisher binding to the given port number.
 
         Args:
-            port: the port to bind the PUB socket to.
+            address: the address to bind the PUB socket to.
     """
-    return JsonPublisher(port)
+    return Publisher(address)
     
-class AbstractPublisher(object):
+class Publisher(ServerConnection):
     """
-    The Publisher class creates a PUB socket on the given port.
-    Once created you can use this to publish messages on a 
-    specific topic or without any topic.
+    Publisher that can send messages to ZMQ
     
         Args:
-            port: the port to use
+            address: the address to bind to
     """
 
-    _port = None
-    _ctx = None
-    
-    def __init__(self, port):
-        self._port = port
-        self._ctx = zmq.Context()
-        self._sock = self._ctx.socket(zmq.PUB)
-        self._sock.bind(port)
+    def __init__(self,address):
+        super(Publisher,self).__init__(address,zmq.PUB)
         
-    def port(self):
-        """
-        Returns the port in use
-        """
-        return self._port
         
-
-class JsonPublisher(AbstractPublisher):
-    """
-    Publisher that sends messages in json format
-    """
-    def publish(self,message):
+    def publish(self,message,message_type,topic=''):
         """
         Publish the message on the PUB socket without a topic name.
         
         Args:
             message: the message to publish
+            message_type: the type of message being sent
         """
-        self._sock.send_json(message)
+        if message_type == RAW:
+            self._sock.send(message)
+        elif message_type == PYOBJ:
+            self._sock.send_pyobj(message)
+        elif message_type == JSON:
+            self._sock.send_json(message)
+        elif message_type == MULTIPART:
+            self._sock.send_multipart([topic, message])
+        elif message_type == STRING:
+            self._sock.send_string(message)
+        elif message_type == UNICODE:
+            self._sock.send_unicode(message)
+        else:
+            raise Exception("Unknown message type %s"%(message_type,))
