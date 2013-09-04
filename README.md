@@ -3,6 +3,8 @@ pyzmq-wrapper
 
 A set of wrapper classes over pyzmq that provide a simper interface and additional functionality.
 
+You can find more docs at - http://pyzmq-wrapper.rtfd.org
+
 The following entities are provided to abstract the user from the zmq code.
 
 Publisher
