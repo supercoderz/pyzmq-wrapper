@@ -5,7 +5,18 @@ A set of wrapper classes over pyzmq that provide a simper interface and addition
 
 You can find more docs at - http://pyzmq-wrapper.rtfd.org
 
+Installation
+------------
+
+You can install this using
+
+    pip install pyzmq-wrapper
+    
+    easy_install pyzmq-wrapper
+
+
 The following entities are provided to abstract the user from the zmq code.
+
 
 Publisher
 ---------

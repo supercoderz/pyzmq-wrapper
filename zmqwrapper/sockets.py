@@ -5,8 +5,8 @@ class ServerConnection(object):
     Creates a server side socket of given type.
     
         Args:
-            address: the address to use
-            socket_type: the tyoe of socket to open
+            - address: the address to use
+            - socket_type: the tyoe of socket to open
     """
 
     _address = None
@@ -24,8 +24,8 @@ class ClientConnection(object):
     Creates a client side socket of given type.
     
         Args:
-            address: the address to use
-            socket_type: the tyoe of socket to open
+            - address: the address to use
+            - socket_type: the tyoe of socket to open
     """
 
     _address = None

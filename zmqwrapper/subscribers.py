@@ -10,10 +10,10 @@ def subscriber(address,topics,callback,message_type):
     The callback is invoked for every message received.
 
         Args:
-            address: the address to bind the PUB socket to.
-            topics: the topics to subscribe
-            callback: the callback to invoke for every message. Must accept 2 variables
-            message_type: the type of message to receive
+            - address: the address to bind the PUB socket to.
+            - topics: the topics to subscribe
+            - callback: the callback to invoke for every message. Must accept 2 variables
+            - message_type: the type of message to receive
     """
     return Subscriber(address,topics,callback,message_type)
     
@@ -22,10 +22,10 @@ class Subscriber(ClientConnection):
     Subscriber that can read messages from ZMQ
     
         Args:
-            address: the address to bind to
-            topics: the topics to subscribe
-            callback: the callback to invoke for every message
-            message_type: the type of message to receive
+            - address: the address to bind to
+            - topics: the topics to subscribe
+            - callback: the callback to invoke for every message
+            - message_type: the type of message to receive
     """
     def _pass(message):
         pass

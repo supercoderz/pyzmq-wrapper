@@ -7,7 +7,7 @@ def publisher(address):
     Creates a publisher binding to the given port number.
 
         Args:
-            address: the address to bind the PUB socket to.
+            - address: the address to bind the PUB socket to.
     """
     return Publisher(address)
     
@@ -16,7 +16,7 @@ class Publisher(ServerConnection):
     Publisher that can send messages to ZMQ
     
         Args:
-            address: the address to bind to
+            - address: the address to bind to
     """
 
     def __init__(self,address):
@@ -28,8 +28,8 @@ class Publisher(ServerConnection):
         Publish the message on the PUB socket without a topic name.
         
         Args:
-            message: the message to publish
-            message_type: the type of message being sent
+            - message: the message to publish
+            - message_type: the type of message being sent
         """
         if message_type == RAW:
             self._sock.send(message)
