@@ -69,6 +69,40 @@ for every message that is received on the topic::
     s.start()
 
 
+Requestor
+~~~~~~~~~
+
+A simple requestor can be created by passing in the address, callback for replies and the message type.
+The callback receives the requestor again so that you can make additional requests if needed.
+
+    from zmqwrapper import *
+    
+    def foo(message,requestor):
+        print message
+
+    rq=requestor('tcp://127.0.0.1:5555',foo,JSON)
+    rq.start()
+    rq.request('test message',JSON)
+
+
+
+Replier
+~~~~~~~
+
+A simple replier can be created by passing in the address, callback for requests and the message type.
+The callback receives the replier so that you can send back he response.
+
+    from zmqwrapper import *
+    import time
+    
+    def foo(message,replier):
+        print message
+        replier.reply(message)
+
+    rp=replier('tcp://127.0.0.1:5555',foo,JSON)
+    rp.start()
+    time.sleep(5)
+
 
 API Docs
 --------

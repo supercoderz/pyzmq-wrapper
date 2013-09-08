@@ -1,6 +1,6 @@
 #message types
 """
-The message types that are supported by the package are - 
+The message types that are supported by the package  are - 
 
 - RAW
 - PYOBJ
