@@ -11,6 +11,7 @@ class ServerConnection(object):
 
     _address = None
     _ctx = None
+    _sock = None
     
     def __init__(self, address,socket_type):
         self._address = address
@@ -18,6 +19,21 @@ class ServerConnection(object):
         self._sock = self._ctx.socket(socket_type)
         self._sock.bind(address)               
 
+    def sock(self):
+        """
+        Returns the zmq socket object being used for the connection. This can be used
+        to send messages with additional flags etc.
+        
+            Returns:
+                - The underlying zmq socket
+        """
+        return self._sock
+        
+    def close(self):
+        """
+        Close the socket connection.
+        """
+        self._sock.close()
 
 class ClientConnection(object):
     """
@@ -30,6 +46,7 @@ class ClientConnection(object):
 
     _address = None
     _ctx = None
+    _sock = None
     
     def __init__(self, address,socket_type):
         self._address = address
@@ -37,3 +54,18 @@ class ClientConnection(object):
         self._sock = self._ctx.socket(socket_type)
         self._sock.connect(address)               
 
+    def sock(self):
+        """
+        Returns the zmq socket object being used for the connection. This can be used
+        to receive messages with additional flags etc.
+        
+            Returns:
+                - The underlying zmq socket
+        """
+        return self._sock
+
+    def close(self):
+        """
+        Close the socket connection.
+        """
+        self._sock.close()        
