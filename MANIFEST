@@ -5,3 +5,4 @@ zmqwrapper/constants.py
 zmqwrapper/publishers.py
 zmqwrapper/sockets.py
 zmqwrapper/subscribers.py
+zmqwrapper/test_pubsub.py

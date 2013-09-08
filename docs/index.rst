@@ -21,7 +21,7 @@ you can use that for sending messages which require you to set certain flags.
 Installation
 ------------
 
-You can install this using
+You can install this using one of the following::
 
     pip install pyzmq-wrapper
     
@@ -39,7 +39,7 @@ Publisher
 ~~~~~~~~~
 
 A simple pulisher can be started on a port as shown below. This object can then be used to send
-messages - with or without a topic.
+messages - with or without a topic::
 
     from zmqwrapper import * 
     
@@ -53,7 +53,7 @@ Subscriber
 ~~~~~~~~~~
 
 A simple subscriber can be created by passing a port, a list of topics and a single callback. The callback is executed
-for every message that is received on the topic.
+for every message that is received on the topic::
 
 
     from zmqwrapper import *
@@ -70,7 +70,8 @@ for every message that is received on the topic.
 
 
 
-API Docs:
+API Docs
+--------
 
 .. toctree::
    :maxdepth: 4
