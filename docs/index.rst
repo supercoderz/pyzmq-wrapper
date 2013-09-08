@@ -73,7 +73,7 @@ Requestor
 ~~~~~~~~~
 
 A simple requestor can be created by passing in the address, callback for replies and the message type.
-The callback receives the requestor again so that you can make additional requests if needed.
+The callback receives the requestor again so that you can make additional requests if needed::
 
     from zmqwrapper import *
     
@@ -90,7 +90,7 @@ Replier
 ~~~~~~~
 
 A simple replier can be created by passing in the address, callback for requests and the message type.
-The callback receives the replier so that you can send back he response.
+The callback receives the replier so that you can send back he response::
 
     from zmqwrapper import *
     import time
