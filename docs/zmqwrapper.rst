@@ -25,6 +25,22 @@ zmqwrapper Package
     :undoc-members:
     :show-inheritance:
 
+:mod:`repliers` Module
+----------------------
+
+.. automodule:: zmqwrapper.repliers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`requestors` Module
+------------------------
+
+.. automodule:: zmqwrapper.requestors
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 :mod:`sockets` Module
 ---------------------
 
@@ -37,6 +53,22 @@ zmqwrapper Package
 -------------------------
 
 .. automodule:: zmqwrapper.subscribers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`test_pubsub` Module
+-------------------------
+
+.. automodule:: zmqwrapper.test_pubsub
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`test_reqrep` Module
+-------------------------
+
+.. automodule:: zmqwrapper.test_reqrep
     :members:
     :undoc-members:
     :show-inheritance:
