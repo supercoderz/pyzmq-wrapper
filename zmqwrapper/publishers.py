@@ -32,5 +32,8 @@ class Publisher(ServerConnection):
             - message_type: the type of message being sent
             - topic: the topic on which to send the message. Defaults to ''.
         """
+        if message_type == MULTIPART:
+            raise Exception("Unsupported request type")
+
         super(Publisher,self).send(message,message_type,topic)
 

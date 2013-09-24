@@ -2,6 +2,8 @@ from publishers import publisher
 from subscribers import subscriber
 from requestors import requestor
 from repliers import replier
+from producers import producer
+from consumers import consumer
 from constants import *
 
 """
@@ -16,6 +18,8 @@ the entities
 - subcriber
 - requestor
 - replier
+- producer
+- consumer
 
 Please refer individual package docs for more details.
 """
