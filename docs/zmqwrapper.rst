@@ -17,6 +17,22 @@ zmqwrapper Package
     :undoc-members:
     :show-inheritance:
 
+:mod:`consumers` Module
+-----------------------
+
+.. automodule:: zmqwrapper.consumers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`producers` Module
+-----------------------
+
+.. automodule:: zmqwrapper.producers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 :mod:`publishers` Module
 ------------------------
 
@@ -61,6 +77,14 @@ zmqwrapper Package
 -------------------------
 
 .. automodule:: zmqwrapper.test_pubsub
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`test_pushpull` Module
+---------------------------
+
+.. automodule:: zmqwrapper.test_pushpull
     :members:
     :undoc-members:
     :show-inheritance:
