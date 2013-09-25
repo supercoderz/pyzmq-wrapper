@@ -52,7 +52,7 @@ messages - with or without a topic::
 Subscriber
 ~~~~~~~~~~
 
-A simple subscriber can be created by passing a port, a list of topics and a single callback. The callback is executed
+A simple subscriber can be created by passing a port, a list of topics, a callback and message type. The callback is executed
 for every message that is received on the topic::
 
 
@@ -102,6 +102,39 @@ The callback receives the replier so that you can send back he response::
     rp=replier('tcp://127.0.0.1:5555',foo,JSON)
     rp.start()
     time.sleep(5)
+
+
+Producer
+~~~~~~~~~
+
+A simple producer can be started on a port as shown below. This object can then be used to push
+messages::
+
+    from zmqwrapper import * 
+    
+    p=producer('tcp://127.0.0.1:5555')
+    p.push("hello",RAW)
+    
+    
+Consumer
+~~~~~~~~~~
+
+A simple consumer can be created by passing a port,a callback and message type. The callback is executed
+for every message that is received on the topic::
+
+
+    from zmqwrapper import *
+    
+    #define the callback
+    def process_greeting(message):
+        print message
+        
+    
+    #create the consumer
+    c=consumer('tcp://127.0.0.1:5555',process_greeting,RAW)
+    #and start it so that we can process the messages
+    c.start()
+
 
 
 API Docs
