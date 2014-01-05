@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name='pyzmq-wrapper',
-      version='0.1.1b',
+      version='0.1.2',
       description='Wrapper classes for pyzmq',
       long_description='Please visit https://github.com/supercoderz/pyzmq-wrapper for more details',
       author='Narahari Allamraju',
