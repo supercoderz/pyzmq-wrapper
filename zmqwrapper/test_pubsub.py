@@ -14,7 +14,7 @@ def test_init_subscriber():
     p=publisher('ipc:///tmp/test/0')
     def foo(topic, message):
         pass
-    s=subscriber('ipc:///tmp/test/0',[''],foo,JSON)
+    s=subscriber('ipc:///tmp/test/0',[u''],foo,JSON)
     assert p is not None
     assert p.sock() is not None
     assert s is not None
@@ -31,7 +31,7 @@ def test_init_basic_subscribe():
         assert message == u'test message'
         m.notifyAll()
         m.release()
-    s=subscriber('ipc:///tmp/test/0',['test'],foo,STRING)
+    s=subscriber('ipc:///tmp/test/0',[u'test'],foo,STRING)
     s.start()
     assert p is not None
     assert p.sock() is not None
