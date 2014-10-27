@@ -64,7 +64,7 @@ class SendReceiveMixin:
         return (topic, message)
 
 
-class ServerConnection(SendReceiveMixin):
+class ServerConnection(SendReceiveMixin,object):
     """
     Creates a server side socket of given type.
     
@@ -99,7 +99,7 @@ class ServerConnection(SendReceiveMixin):
         """
         self._sock.close()
 
-class ClientConnection(SendReceiveMixin):
+class ClientConnection(SendReceiveMixin,object):
     """
     Creates a client side socket of given type.
     
