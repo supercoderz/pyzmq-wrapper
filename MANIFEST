@@ -2,10 +2,13 @@
 setup.py
 zmqwrapper/__init__.py
 zmqwrapper/constants.py
+zmqwrapper/consumers.py
+zmqwrapper/producers.py
 zmqwrapper/publishers.py
 zmqwrapper/repliers.py
 zmqwrapper/requestors.py
 zmqwrapper/sockets.py
 zmqwrapper/subscribers.py
 zmqwrapper/test_pubsub.py
+zmqwrapper/test_pushpull.py
 zmqwrapper/test_reqrep.py
