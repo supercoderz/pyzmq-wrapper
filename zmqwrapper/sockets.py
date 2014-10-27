@@ -1,5 +1,5 @@
 import zmq
-from constants import *
+from .constants import *
 
 
 class SendReceiveMixin:
@@ -64,7 +64,7 @@ class SendReceiveMixin:
         return (topic, message)
 
 
-class ServerConnection(object,SendReceiveMixin):
+class ServerConnection(SendReceiveMixin):
     """
     Creates a server side socket of given type.
     
@@ -99,7 +99,7 @@ class ServerConnection(object,SendReceiveMixin):
         """
         self._sock.close()
 
-class ClientConnection(object,SendReceiveMixin):
+class ClientConnection(SendReceiveMixin):
     """
     Creates a client side socket of given type.
     

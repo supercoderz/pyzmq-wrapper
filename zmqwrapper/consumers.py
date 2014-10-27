@@ -1,6 +1,6 @@
 import zmq
-from sockets import ClientConnection
-from constants import *
+from .sockets import ClientConnection
+from .constants import *
 import threading
 
 def consumer(address,callback,message_type):

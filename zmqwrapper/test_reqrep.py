@@ -1,6 +1,6 @@
-from requestors import requestor
-from repliers import replier
-from constants import *
+from .requestors import requestor
+from .repliers import replier
+from .constants import *
 import time
 import threading 
 

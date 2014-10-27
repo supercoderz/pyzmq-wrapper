@@ -1,6 +1,6 @@
-from producers import producer
-from consumers import consumer
-from constants import *
+from .producers import producer
+from .consumers import consumer
+from .constants import *
 import time
 import threading
 
@@ -28,7 +28,7 @@ def test_init_basic_consume():
     p=producer('ipc:///tmp/test/0')
     def foo(message):
         m.acquire()
-        assert message == 'test message'
+        assert message == u'test message'
         m.notifyAll()
         m.release()
     c=consumer('ipc:///tmp/test/0',foo,STRING)
@@ -37,7 +37,7 @@ def test_init_basic_consume():
     assert p.sock() is not None
     assert c is not None
     assert c.sock() is not None
-    p.push('test message',STRING)
+    p.push(u'test message',STRING)
     m.wait() 
     m.release()
     c.stop()   

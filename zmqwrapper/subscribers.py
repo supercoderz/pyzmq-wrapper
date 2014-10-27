@@ -1,6 +1,6 @@
 import zmq
-from sockets import ClientConnection
-from constants import *
+from .sockets import ClientConnection
+from .constants import *
 import threading
 
 def subscriber(address,topics,callback,message_type):
@@ -35,7 +35,7 @@ class Subscriber(ClientConnection):
         self._message_type = message_type
         super(Subscriber,self).__init__(address,zmq.SUB)
         for topic in self._topics:
-            self._sock.setsockopt(zmq.SUBSCRIBE,topic)
+            self._sock.setsockopt_string(zmq.SUBSCRIBE,topic)
         
                     
     def _consume(self):

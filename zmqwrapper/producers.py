@@ -1,6 +1,6 @@
 import zmq
-from sockets import ServerConnection
-from constants import *
+from .sockets import ServerConnection
+from .constants import *
 import threading
 
 def producer(address):
