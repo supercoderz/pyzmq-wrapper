@@ -3,13 +3,16 @@ from .consumers import consumer
 from .constants import *
 import time
 import threading
+from flaky import flaky
 
+@flaky(max_runs=5)
 def test_init_producer():
     p=producer('ipc:///tmp/test/0')
     assert p is not None
     assert p.sock() is not None
     p.close()
     
+@flaky(max_runs=5)
 def test_init_consumer():
     p=producer('ipc:///tmp/test/0')
     def foo(message):
@@ -22,6 +25,7 @@ def test_init_consumer():
     p.close()
     c.close()    
     
+@flaky(max_runs=5)
 def test_init_basic_consume():
     m = threading.Condition()
     m.acquire()

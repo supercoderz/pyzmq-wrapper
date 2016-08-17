@@ -3,7 +3,9 @@ from .repliers import replier
 from .constants import *
 import time
 import threading 
+from flaky import flaky
 
+@flaky(max_runs=5)
 def test_init_requestor():
     def foo(message,requestor):
         pass
@@ -12,6 +14,7 @@ def test_init_requestor():
     assert rq.sock() is not None
     rq.close()
     
+@flaky(max_runs=5)
 def test_init_replier():
     def foo(message,requestor):
         pass
@@ -24,6 +27,7 @@ def test_init_replier():
     rq.close()
     rp.close()    
     
+@flaky(max_runs=5)
 def test_init_basic_reqrep():
     m = threading.Condition()
     m.acquire()

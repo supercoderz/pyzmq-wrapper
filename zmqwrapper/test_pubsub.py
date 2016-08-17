@@ -3,13 +3,16 @@ from .subscribers import subscriber
 from .constants import *
 import time
 import threading
+from flaky import flaky
 
+@flaky(max_runs=5)
 def test_init_publisher():
     p=publisher('ipc:///tmp/test/0')
     assert p is not None
     assert p.sock() is not None
     p.close()
-    
+
+@flaky(max_runs=5)
 def test_init_subscriber():
     p=publisher('ipc:///tmp/test/0')
     def foo(topic, message):
@@ -21,7 +24,8 @@ def test_init_subscriber():
     assert s.sock() is not None
     p.close()
     s.close()    
-    
+
+@flaky(max_runs=5)    
 def test_init_basic_subscribe():
     m = threading.Condition()
     m.acquire()
